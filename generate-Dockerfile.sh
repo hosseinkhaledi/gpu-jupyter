@@ -5,7 +5,7 @@ cd $(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export DOCKERFILE=".build/Dockerfile"
 export STACKS_DIR=".build/docker-stacks"
 # please test the build of the commit in https://github.com/jupyter/docker-stacks/commits/main in advance
-export HEAD_COMMIT="efa95c2c5b9b095247cd2f5e55bc3b38c85da335"
+export HEAD_COMMIT="b94d9e074c4b46292f3e3a2e1cb490988e428bf0"
 
 while [[ "$#" -gt 0 ]]; do case $1 in
   -p|--pw|--password) PASSWORD="$2" && USE_PASSWORD=1; shift;;
@@ -70,9 +70,9 @@ cat $STACKS_DIR/base-notebook/Dockerfile | grep -v 'BASE_CONTAINER' | grep -v 'F
 
 # copy files that are used during the build:
 cp $STACKS_DIR/base-notebook/jupyter_server_config.py .build/
-cp $STACKS_DIR/base-notebook/initial-condarc .build/
-cp $STACKS_DIR/base-notebook/fix-permissions .build/
-cp $STACKS_DIR/base-notebook/start.sh .build/
+cp $STACKS_DIR/docker-stacks-foundation/initial-condarc .build/
+cp $STACKS_DIR/docker-stacks-foundation/fix-permissions .build/
+cp $STACKS_DIR/docker-stacks-foundation/start.sh .build/
 cp $STACKS_DIR/base-notebook/start-notebook.sh .build/
 cp $STACKS_DIR/base-notebook/start-singleuser.sh .build/
 chmod 755 .build/*
