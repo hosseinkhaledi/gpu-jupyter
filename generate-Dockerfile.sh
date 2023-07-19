@@ -75,6 +75,9 @@ cp $STACKS_DIR/docker-stacks-foundation/fix-permissions .build/
 cp $STACKS_DIR/docker-stacks-foundation/start.sh .build/
 cp $STACKS_DIR/base-notebook/start-notebook.sh .build/
 cp $STACKS_DIR/base-notebook/start-singleuser.sh .build/
+cp $STACKS_DIR/base-notebook/docker_healthcheck.py .build/
+cp $STACKS_DIR/minimal-notebook/setup-scripts .build/ -r
+cp $STACKS_DIR/minimal-notebook/setup-scripts .build/
 chmod 755 .build/*
 
 echo "
